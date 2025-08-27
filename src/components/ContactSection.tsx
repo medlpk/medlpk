@@ -20,10 +20,19 @@ export function ContactSection() {
   })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    toast.success("Message sent successfully! I'll get back to you soon.")
-    setFormData({ name: '', email: '', subject: '', message: '' })
-  }
+    e.preventDefault();
+  
+    const { name, email, subject, message } = formData;
+  
+    // Use the form's email field as the recipient
+    const mailto = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+  
+    // Open draft in user's email app
+    window.location.href = mailto;
+  
+    // toast.success("Message draft opened in your email app.");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
