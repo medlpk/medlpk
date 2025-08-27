@@ -12,17 +12,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Install pnpm (uses package.json "packageManager" if present)
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9 # or omit to use package.json's "packageManager"
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: 'pnpm'   # enable pnpm cache
 
       - name: Install
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build (Vite)
-        run: npm run build
+        env:
+          CI: true
+        run: pnpm build
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
