@@ -56,6 +56,7 @@ export default function App() {
       <Navigation />
       <main>
         <HeroSection />
+        kir
         <AboutSection />
         <PortfolioSection onViewCaseStudy={handleViewCaseStudy} />
         <ResumeSection />
