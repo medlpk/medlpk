@@ -55,7 +55,7 @@ export function Navigation() {
             transition={{ delay: 0.1 }}
           >
             <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              <img src={logo} alt="logo" width={100} className="aspect-video" />
+              <img src={logo} alt="logo" width={100} className="aspect-vixeo" />
             </h2>
           </motion.div>
 
