@@ -5,6 +5,7 @@ import { Badge } from './ui/badge'
 import { Card } from './ui/card'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import { Palette, Target, Users, Zap } from 'lucide-react'
+import profile from '../assets/portraite.png'
 
 export function AboutSection() {
   const values = [
@@ -125,7 +126,7 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-600/20 rounded-2xl blur-2xl" />
               <div className="relative bg-gradient-to-br from-background/90 to-background/50 backdrop-blur-lg border border-border/50 rounded-2xl p-2 shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/flagged/photo-1573144142793-a87ccabca492?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwZGVzaWduZXIlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTYyMTkwNDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src={profile}
                   alt="Mohammad Ehsan Delpak - Senior Product Designer"
                   className="w-full h-96 object-cover rounded-xl"
                 />
